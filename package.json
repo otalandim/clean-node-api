@@ -6,6 +6,17 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "lint-staged": {
+    "*.js": [
+      "standard --fix",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/otalandim/clean-node-api.git"
@@ -18,6 +29,8 @@
   },
   "homepage": "https://github.com/otalandim/clean-node-api#readme",
   "devDependencies": {
+    "husky": "^4.2.1",
+    "lint-staged": "^10.0.7",
     "standard": "^14.3.1"
   }
 }
